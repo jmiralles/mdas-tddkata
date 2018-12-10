@@ -20,6 +20,11 @@ public class CalculatorTest {
         return new Object[][] { { "1,2" , 3}, { "4, 8" , 12 }, { "9 ,10", 19} };
     }
 
+    @DataProvider
+    public Object[][] multipleDataMethod() {
+        return new Object[][] { { "4, 8, 6" , 18 }, { "1, 9 ,10, 45", 65} };
+    }
+
     @Test
     public void add_empty_string() {
         int expected = 0;
@@ -41,5 +46,11 @@ public class CalculatorTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "multipleDataMethod")
+    public void add_multiple_numbers(String numbers, int result) {
+        int expected = result;
+        int actual = calculator.Add(numbers);
+        Assert.assertEquals(actual, expected);
+    }
 
 }

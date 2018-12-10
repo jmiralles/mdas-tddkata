@@ -8,8 +8,13 @@ public class Calculator {
         } else if (numbers.length() == 1) {
             return stringToNumber(numbers);
         } else {
+            int sum = 0;
             String[] parts = numbers.split(",");
-            return stringToNumber(parts[0].trim()) + stringToNumber(parts[1].trim());
+
+            for (String i : parts)
+                sum += stringToNumber(i.trim());
+
+            return sum;
         }
     }
 
