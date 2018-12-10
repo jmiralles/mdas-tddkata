@@ -15,9 +15,9 @@ public class CalculatorTest {
     }
 
     @Test
-    public void sum_two_numbers() {
-        int expected = 3;
-        int actual = calculator.Add(1, 2);
+    public void add_zero_numbers() {
+        int expected = 0;
+        int actual = calculator.Add("");
         Assert.assertEquals(actual, expected);
     }
 
