@@ -25,6 +25,11 @@ public class CalculatorTest {
         return new Object[][] { { "4, 8, 6" , 18 }, { "1, 9 ,10, 45", 65} };
     }
 
+    @DataProvider
+    public Object[][] newLinesDataMethod() {
+        return new Object[][] { { "1\n2, 3" , 6 }, { "5, 2\n4, 3" , 14}};
+    }
+
     @Test
     public void add_empty_string() {
         int expected = 0;
@@ -34,8 +39,8 @@ public class CalculatorTest {
 
     @Test
     public void add_single_number() {
-        int expected = 6;
-        int actual = calculator.Add("6");
+        int expected = 16;
+        int actual = calculator.Add("16");
         Assert.assertEquals(actual, expected);
     }
 
@@ -52,5 +57,14 @@ public class CalculatorTest {
         int actual = calculator.Add(numbers);
         Assert.assertEquals(actual, expected);
     }
+
+
+    @Test(dataProvider = "newLinesDataMethod")
+    public void add_multiple_numbers_with_newlines(String numbers, int result) {
+        int expected = result;
+        int actual = calculator.Add(numbers);
+        Assert.assertEquals(actual, expected);
+    }
+
 
 }
