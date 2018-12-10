@@ -21,5 +21,4 @@ public class CalculatorTest {
         Assert.assertEquals(actual, expected);
     }
 
-
 }
