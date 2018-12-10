@@ -7,7 +7,9 @@ public class Calculator {
             return 0;
         } else if (numbers.length() == 1) {
             return Integer.parseInt(numbers);
+        } else {
+            String[] parts = numbers.split(",");
+            return Integer.parseInt(parts[0].trim()) + Integer.parseInt(parts[1].trim());
         }
-        return -1;
     }
 }
