@@ -15,7 +15,7 @@ public class CalculatorTest {
     }
 
     @Test
-    public void add_zero_numbers() {
+    public void add_empty_string() {
         int expected = 0;
         int actual = calculator.Add("");
         Assert.assertEquals(actual, expected);
