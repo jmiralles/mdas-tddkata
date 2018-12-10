@@ -27,7 +27,7 @@ public class CalculatorTest {
 
     @DataProvider
     public Object[][] newLinesDataMethod() {
-        return new Object[][] { { "1\n2, 3" , 6 }, { "5, 2\n4, 3" , 14}};
+        return new Object[][] { { "1\n2, 3" , 6 }, { "5, 2\n4, 3" , 14} };
     }
 
     @Test
@@ -64,6 +64,11 @@ public class CalculatorTest {
         int expected = result;
         int actual = calculator.Add(numbers);
         Assert.assertEquals(actual, expected);
+    }
+
+    @Test(expectedExceptions = NumberFormatException.class)
+    public void add_multiple_numbers_with_newlines() {
+        int actual = calculator.Add("1,\\n");
     }
 
 
