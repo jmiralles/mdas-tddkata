@@ -3,19 +3,16 @@ package com.jmiralles.calculator;
 public class Calculator {
 
     public int Add(String numbers) {
-        if (numbers.length() == 0) {
-            return 0;
-        } else {
+        if (numbers.length() == 0) return 0;
 
-            int sum = 0;
-            String[] parts = numbers.split(",|\\n");
+        int sum = 0;
+        String[] numbersArray = numbers.split(",|\\n");
 
-            for (String i : parts) {
-                sum += stringToNumber(i.trim());
-            }
-
-            return sum;
+        for (String number : numbersArray) {
+            sum += stringToNumber(number.trim());
         }
+
+        return sum;
     }
 
     private int stringToNumber(String number) {
