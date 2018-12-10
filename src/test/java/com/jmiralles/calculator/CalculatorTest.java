@@ -21,4 +21,12 @@ public class CalculatorTest {
         Assert.assertEquals(actual, expected);
     }
 
+    @Test
+    public void add_single_number() {
+        int expected = 6;
+        int actual = calculator.Add("6");
+        Assert.assertEquals(actual, expected);
+    }
+
+
 }
