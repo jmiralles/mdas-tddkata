@@ -15,7 +15,7 @@ public class Calculator {
         return sum;
     }
 
-    private int stringToNumber(String number) {
+    public int stringToNumber(String number) {
         return Integer.parseInt(number);
     }
 }
